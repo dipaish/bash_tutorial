@@ -18,8 +18,7 @@ main() {
 }
 
 clear_screen() {
-    # clear
-    cls
+    clear
 }
 
 prompt_to_continue() {
