@@ -1,0 +1,115 @@
+\n------------------------------------------------------------
+\n\t1. if statement
+\n\nThe if statement is the simplest conditional.
+\nThe code following it will only be executed if the condition is true.
+\nTry it out by typing the following:
+\n\nif [ "foo" == "foo" ]; then
+\n\techo "true"
+\nfi
+\n
+#
+if [ "foo" == "foo" ]; then
+echo "true"
+fi
+#
+> true
+#
+\n------------------------------------------------------------
+\n\t2. else statement
+\n\nThe code following the else statement is executed
+\nonly if the condition of the preceding if statement is false.
+\nTry it out by typing the following:
+\n\nif [ "foo" == "bar" ]; then
+\n\techo "true"
+\nelse
+\n\techo "false"
+\nfi
+\n
+#
+if [ "foo" == "bar" ]; then
+echo "true"
+else
+echo "false"
+fi
+#
+> false 
+#
+\n------------------------------------------------------------
+\n\t3. elif statement
+\n\nThe code following the elif statement is executed
+\nonly if the previous if statement evaluates to false and
+\nthe condition of the elif statement is true.
+\nTry it out by typing the following:
+\n\nif [ "foo" == "bar" ]; then
+\n\techo "a"
+\nelif [ "foo" == "foo" ]; then
+\n\techo "b"
+\nfi
+\n
+#
+if [ "foo" == "bar" ]; then
+echo "a"
+elif [ "foo" == "foo" ]; then
+echo "b"
+fi
+#
+> b
+#
+\n------------------------------------------------------------
+\n\t4. Comparisons
+\n\nVarious comparisons can be used within conditional statements.
+\nExamples of these are -eq, -ne, and -lt, which stand for equal, 
+\nnot equal, and less than. 
+\nTry them out by typing the following:
+\n\nif [ 5 -eq 10 ]; then
+\n\techo "a"
+\nelif [ 5 -ne 10 ]; then
+\n\techo "b"
+\nfi
+\n
+#
+if [ 5 -eq 10 ]; then
+echo "a"
+elif [ 5 -ne 10 ]; then
+echo "b"
+fi
+#
+> b
+#
+\n------------------------------------------------------------
+\n\t5. logical operators
+\n\nLogical operators can be used to combine conditional statements.
+\nThese include the logical AND (&&), OR (||), and NOT (!).
+\nThe second operand of a logical AND is only evaluated if the first
+\ncondition is true. The second operand of a logical OR is only evaluated if
+\nthe first condition is false. This is called short-circuit evaluation,
+\nan example of which you'll see in the next exercise.
+\nTry them out by typing the following:
+\n\nif [ 5 -eq 5 ] && [ 5 -eq 10 ]; then
+\n\techo a
+\nelif [ 5 -eq 5 ] || [ 5 -eq 10 ]; then
+\n\techo b
+\nfi
+\n
+#
+if [ 5 -eq 5 ] && [ 5 -eq 10 ]; then
+echo a
+elif [ 5 -eq 5 ] || [ 5 -eq 10 ]; then
+echo b
+fi
+#
+> b
+#
+\n------------------------------------------------------------
+\n\t6. test command
+\n\nThe test command can sometimes be used instead of an if statement.
+\nTry it out by typing the following:
+\n\ntest 5 -gt 7 && echo "yes"
+\ntest 5 -gt 7 || echo "no"
+\n
+#
+test 5 -gt 7 && echo "yes"
+test 5 -gt 7 || echo "no"
+#
+> no
+#
