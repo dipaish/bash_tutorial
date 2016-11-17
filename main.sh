@@ -97,7 +97,7 @@ reset_input() {
 }
 
 quit_bash_tutorial() {
-    echo -e "\nGoodbye!"
+    echo -e "\nGoodbye!\n"
 }
 
 main "$@"
